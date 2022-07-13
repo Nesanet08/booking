@@ -158,15 +158,6 @@ output application/json
         </ee:transform>
     </flow>
     <flow name="post:\flights:application\json:booking-api-config">
-        <ee:transform>
-            <ee:message>
-                <ee:set-payload><![CDATA[%dw 2.0
-output application/json
----
-{
-  message: "Flight added (but not really)"
-}]]></ee:set-payload>
-            </ee:message>
-        </ee:transform>
+		<flow-ref doc:name="Flow Reference" doc:id="51f6fc68-a31c-46e6-9f5e-b1a62913b277" name="booking-api-main"/>
     </flow>
 </mule>
